@@ -1,0 +1,635 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "S SwapSkill Trade Skills. Build Futures." [ref=e3] [cursor=pointer]:
+      - /url: "#app"
+      - generic [ref=e4]: S
+      - generic [ref=e5]:
+        - strong [ref=e6]: SwapSkill
+        - generic [ref=e7]: Trade Skills. Build Futures.
+    - navigation "Primary navigation" [ref=e8]:
+      - link "Marketplace" [ref=e9] [cursor=pointer]:
+        - /url: "#marketplace"
+      - link "Match Engine" [ref=e10] [cursor=pointer]:
+        - /url: "#matches"
+      - link "Dashboard" [ref=e11] [cursor=pointer]:
+        - /url: "#dashboard"
+      - link "Trust" [ref=e12] [cursor=pointer]:
+        - /url: "#trust"
+      - link "Growth" [ref=e13] [cursor=pointer]:
+        - /url: "#growth"
+    - generic [ref=e14]:
+      - button "Verify" [ref=e15] [cursor=pointer]:
+        - img [ref=e16]
+        - text: Verify
+      - button "List Skill" [ref=e19] [cursor=pointer]:
+        - img [ref=e20]
+        - text: List Skill
+  - main [ref=e21]:
+    - region "SwapSkill" [ref=e22]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Campus verified marketplace
+        - heading "SwapSkill" [level=1] [ref=e25]
+        - paragraph [ref=e26]: A mobile-first peer network where students swap, rent, teach, and learn skills using trusted campus identity, SwapCoins, escrow, reviews, and reputation.
+        - group "Mode shortcuts" [ref=e27]:
+          - button "All Campus market" [ref=e28] [cursor=pointer]:
+            - strong [ref=e29]: All
+            - generic [ref=e30]: Campus market
+          - button "Swap Skill for skill" [ref=e31] [cursor=pointer]:
+            - strong [ref=e32]: Swap
+            - generic [ref=e33]: Skill for skill
+          - button "Rent Paid projects" [ref=e34] [cursor=pointer]:
+            - strong [ref=e35]: Rent
+            - generic [ref=e36]: Paid projects
+          - button "Learn Peer teaching" [ref=e37] [cursor=pointer]:
+            - strong [ref=e38]: Learn
+            - generic [ref=e39]: Peer teaching
+      - generic "Live campus market console" [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: AIT Pune live
+          - generic [ref=e43]: Campus verified
+        - generic [ref=e44]:
+          - article [ref=e45]:
+            - generic [ref=e46]: 10,284
+            - generic [ref=e47]: Registered users
+          - article [ref=e48]:
+            - generic [ref=e49]: 1,536
+            - generic [ref=e50]: Monthly swaps
+          - article [ref=e51]:
+            - generic [ref=e52]: "780"
+            - generic [ref=e53]: SwapCoins
+          - article [ref=e54]:
+            - generic [ref=e55]: "98"
+            - generic [ref=e56]: Trust score
+        - generic "Live marketplace activity" [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - strong [ref=e60]: Nisha
+              - text: published a design rental
+            - generic [ref=e61]: Live
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - strong [ref=e64]: Aarav
+              - text: matched for a React swap
+            - generic [ref=e65]: Live
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - strong [ref=e68]: Meera
+              - text: released escrow after delivery
+            - generic [ref=e69]: Live
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - strong [ref=e72]: Rohan
+              - text: earned a Tutor badge
+            - generic [ref=e73]: Live
+    - region "Marketplace" [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - paragraph [ref=e77]: Skill exchange
+          - heading "Marketplace" [level=2] [ref=e78]
+        - button "New Listing" [ref=e79] [cursor=pointer]:
+          - img [ref=e80]
+          - text: New Listing
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e85]: Search
+          - searchbox "Search" [ref=e86]
+        - generic [ref=e87]:
+          - generic [ref=e88]: Category
+          - combobox "Category" [ref=e89]:
+            - option "All" [selected]
+            - option "Coding"
+            - option "Design"
+            - option "Video"
+            - option "Academics"
+            - option "Music"
+            - option "Language"
+            - option "Business"
+        - group "Marketplace mode filter" [ref=e90]:
+          - button "All" [ref=e91] [cursor=pointer]
+          - button "Swap" [ref=e92] [cursor=pointer]
+          - button "Rent" [ref=e93] [cursor=pointer]
+          - button "Learn" [ref=e94] [cursor=pointer]
+      - generic [ref=e95]:
+        - article [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: SWAP
+            - button "Save AI pitch rehearsal" [ref=e99] [cursor=pointer]:
+              - img [ref=e100]
+          - generic [ref=e102]:
+            - generic [ref=e103]: Coding
+            - heading "AI pitch rehearsal" [level=3] [ref=e104]
+            - paragraph [ref=e105]: I will help founders practice a crisp 90 second pitch and Q&A flow.
+          - generic [ref=e106]:
+            - generic [ref=e107]: Swapnil Navanath Jadhav - Your campus
+            - generic [ref=e108]: Rating 5.0 - Demand 91%
+            - generic [ref=e109]: 120 SwapCoins - Tonight after 8 PM
+          - generic [ref=e110]:
+            - button "Swap" [ref=e111] [cursor=pointer]:
+              - img [ref=e112]
+              - text: Swap
+            - button "View" [ref=e117] [cursor=pointer]:
+              - img [ref=e118]
+              - text: View
+            - button "Chat" [ref=e121] [cursor=pointer]:
+              - img [ref=e122]
+              - text: Chat
+        - article [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e126]: SWAP
+            - button "Save React frontend sprint" [ref=e127] [cursor=pointer]:
+              - img [ref=e128]
+          - generic [ref=e130]:
+            - generic [ref=e131]: Coding
+            - heading "React frontend sprint" [level=3] [ref=e132]
+            - paragraph [ref=e133]: I can build a polished React interface and need a UI/UX audit for my hackathon dashboard.
+          - generic [ref=e134]:
+            - generic [ref=e135]: Aarav Mehta - AIT Pune
+            - generic [ref=e136]: Rating 4.9 - Demand 92%
+            - generic [ref=e137]: 180 SwapCoins - Tonight and weekends
+          - generic [ref=e138]:
+            - button "Swap" [ref=e139] [cursor=pointer]:
+              - img [ref=e140]
+              - text: Swap
+            - button "View" [ref=e145] [cursor=pointer]:
+              - img [ref=e146]
+              - text: View
+            - button "Chat" [ref=e149] [cursor=pointer]:
+              - img [ref=e150]
+              - text: Chat
+        - article [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]: RENT
+            - button "Save Logo and pitch deck polish" [ref=e155] [cursor=pointer]:
+              - img [ref=e156]
+          - generic [ref=e158]:
+            - generic [ref=e159]: Design
+            - heading "Logo and pitch deck polish" [level=3] [ref=e160]
+            - paragraph [ref=e161]: Clean brand assets, investor deck layout, and social media launch tiles for student startups.
+          - generic [ref=e162]:
+            - generic [ref=e163]: Nisha Rao - COEP Tech
+            - generic [ref=e164]: Rating 4.8 - Demand 84%
+            - generic [ref=e165]: Rs 450 - Weekday evenings
+          - generic [ref=e166]:
+            - button "Rent" [ref=e167] [cursor=pointer]:
+              - img [ref=e168]
+              - text: Rent
+            - button "View" [ref=e170] [cursor=pointer]:
+              - img [ref=e171]
+              - text: View
+            - button "Chat" [ref=e174] [cursor=pointer]:
+              - img [ref=e175]
+              - text: Chat
+        - article [ref=e177]:
+          - generic [ref=e178]:
+            - generic [ref=e179]: LEARN
+            - button "Save Learn Python debugging" [ref=e180] [cursor=pointer]:
+              - img [ref=e181]
+          - generic [ref=e183]:
+            - generic [ref=e184]: Coding
+            - heading "Learn Python debugging" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Need help understanding stack traces, file handling, and API errors before a mini project demo.
+          - generic [ref=e187]:
+            - generic [ref=e188]: Kabir Shah - AIT Pune
+            - generic [ref=e189]: Rating 4.7 - Demand 78%
+            - generic [ref=e190]: 120 SwapCoins - Morning slots
+          - generic [ref=e191]:
+            - button "Learn" [ref=e192] [cursor=pointer]:
+              - img [ref=e193]
+              - text: Learn
+            - button "View" [ref=e198] [cursor=pointer]:
+              - img [ref=e199]
+              - text: View
+            - button "Chat" [ref=e202] [cursor=pointer]:
+              - img [ref=e203]
+              - text: Chat
+        - article [ref=e205]:
+          - generic [ref=e206]:
+            - generic [ref=e207]: RENT
+            - button "Save Video editing for reels" [ref=e208] [cursor=pointer]:
+              - img [ref=e209]
+          - generic [ref=e212]:
+            - generic [ref=e213]: Video
+            - heading "Video editing for reels" [level=3] [ref=e214]
+            - paragraph [ref=e215]: Fast cuts, captions, sound sync, and launch reels for campus clubs and hackathon projects.
+          - generic [ref=e216]:
+            - generic [ref=e217]: Meera Kulkarni - Symbiosis Pune
+            - generic [ref=e218]: Rating 4.9 - Demand 89%
+            - generic [ref=e219]: Rs 350 - 48 hour delivery
+          - generic [ref=e220]:
+            - button "Rent" [ref=e221] [cursor=pointer]:
+              - img [ref=e222]
+              - text: Rent
+            - button "View" [ref=e224] [cursor=pointer]:
+              - img [ref=e225]
+              - text: View
+            - button "Chat" [ref=e228] [cursor=pointer]:
+              - img [ref=e229]
+              - text: Chat
+        - article [ref=e231]:
+          - generic [ref=e232]:
+            - generic [ref=e233]: SWAP
+            - button "Save DSA crash tutoring" [ref=e234] [cursor=pointer]:
+              - img [ref=e235]
+          - generic [ref=e237]:
+            - generic [ref=e238]: Academics
+            - heading "DSA crash tutoring" [level=3] [ref=e239]
+            - paragraph [ref=e240]: I teach arrays, recursion, and dynamic programming. Looking for presentation design help in exchange.
+          - generic [ref=e241]:
+            - generic [ref=e242]: Rohan Iyer - PICT Pune
+            - generic [ref=e243]: Rating 4.6 - Demand 73%
+            - generic [ref=e244]: 160 SwapCoins - Saturday 4 PM
+          - generic [ref=e245]:
+            - button "Swap" [ref=e246] [cursor=pointer]:
+              - img [ref=e247]
+              - text: Swap
+            - button "View" [ref=e252] [cursor=pointer]:
+              - img [ref=e253]
+              - text: View
+            - button "Chat" [ref=e256] [cursor=pointer]:
+              - img [ref=e257]
+              - text: Chat
+        - article [ref=e259]:
+          - generic [ref=e260]:
+            - generic [ref=e261]: LEARN
+            - button "Save Guitar basics from zero" [ref=e262] [cursor=pointer]:
+              - img [ref=e263]
+          - generic [ref=e265]:
+            - generic [ref=e266]: Music
+            - heading "Guitar basics from zero" [level=3] [ref=e267]
+            - paragraph [ref=e268]: Looking for a patient peer who can teach chords, rhythm, and one complete song over two sessions.
+          - generic [ref=e269]:
+            - generic [ref=e270]: Sara D'Souza - Fergusson College
+            - generic [ref=e271]: Rating 4.8 - Demand 68%
+            - generic [ref=e272]: 90 SwapCoins - Sunday afternoon
+          - generic [ref=e273]:
+            - button "Learn" [ref=e274] [cursor=pointer]:
+              - img [ref=e275]
+              - text: Learn
+            - button "View" [ref=e280] [cursor=pointer]:
+              - img [ref=e281]
+              - text: View
+            - button "Chat" [ref=e284] [cursor=pointer]:
+              - img [ref=e285]
+              - text: Chat
+        - article [ref=e287]:
+          - generic [ref=e288]:
+            - generic [ref=e289]: RENT
+            - button "Save Excel dashboard build" [ref=e290] [cursor=pointer]:
+              - img [ref=e291]
+          - generic [ref=e293]:
+            - generic [ref=e294]: Business
+            - heading "Excel dashboard build" [level=3] [ref=e295]
+            - paragraph [ref=e296]: Budget trackers, charts, pivot tables, and clean dashboards for club finance teams.
+          - generic [ref=e297]:
+            - generic [ref=e298]: Tanvi Patil - BMCC Pune
+            - generic [ref=e299]: Rating 4.7 - Demand 81%
+            - generic [ref=e300]: Rs 300 - Next 3 days
+          - generic [ref=e301]:
+            - button "Rent" [ref=e302] [cursor=pointer]:
+              - img [ref=e303]
+              - text: Rent
+            - button "View" [ref=e305] [cursor=pointer]:
+              - img [ref=e306]
+              - text: View
+            - button "Chat" [ref=e309] [cursor=pointer]:
+              - img [ref=e310]
+              - text: Chat
+        - article [ref=e312]:
+          - generic [ref=e313]:
+            - generic [ref=e314]: SWAP
+            - button "Save Spoken English practice" [ref=e315] [cursor=pointer]:
+              - img [ref=e316]
+          - generic [ref=e318]:
+            - generic [ref=e319]: Language
+            - heading "Spoken English practice" [level=3] [ref=e320]
+            - paragraph [ref=e321]: Conversation practice and interview drills in exchange for help with basic web development.
+          - generic [ref=e322]:
+            - generic [ref=e323]: Imran Khan - MIT WPU
+            - generic [ref=e324]: Rating 4.5 - Demand 76%
+            - generic [ref=e325]: 110 SwapCoins - Daily 20 minutes
+          - generic [ref=e326]:
+            - button "Swap" [ref=e327] [cursor=pointer]:
+              - img [ref=e328]
+              - text: Swap
+            - button "View" [ref=e333] [cursor=pointer]:
+              - img [ref=e334]
+              - text: View
+            - button "Chat" [ref=e337] [cursor=pointer]:
+              - img [ref=e338]
+              - text: Chat
+    - region "Match Engine" [ref=e340]:
+      - generic [ref=e341]:
+        - generic [ref=e342]:
+          - paragraph [ref=e343]: SwapCoin valuation
+          - heading "Match Engine" [level=2] [ref=e344]
+        - button "Refresh Matches" [ref=e345] [cursor=pointer]:
+          - img [ref=e346]
+          - text: Refresh Matches
+      - generic [ref=e349]:
+        - generic [ref=e350]:
+          - heading "Barter calculator" [level=3] [ref=e351]
+          - generic [ref=e352]:
+            - generic [ref=e353]: Your skill
+            - combobox "Your skill" [ref=e354]:
+              - option "React frontend build" [selected]
+              - option "Video editing sprint"
+              - option "DSA tutoring"
+              - option "Presentation design"
+          - generic [ref=e355]:
+            - generic [ref=e356]: Skill needed
+            - combobox "Skill needed" [ref=e357]:
+              - option "UI/UX audit" [selected]
+              - option "Python debugging"
+              - option "Guitar basics"
+              - option "Excel dashboard"
+          - generic [ref=e358]:
+            - generic [ref=e359]: Estimated hours
+            - spinbutton "Estimated hours" [ref=e360]: "4"
+          - button "Calculate" [ref=e361] [cursor=pointer]:
+            - img [ref=e362]
+            - text: Calculate
+          - generic [ref=e364]:
+            - strong [ref=e365]: 160 SwapCoins
+            - generic [ref=e366]: Fair value for a 4 hour exchange.
+        - generic [ref=e367]:
+          - article [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]: SWAP
+              - generic [ref=e371]: 97% fit
+            - generic [ref=e372]:
+              - heading "React frontend sprint" [level=3] [ref=e373]
+              - paragraph [ref=e374]: Balanced barter value with Aarav Mehta from AIT Pune.
+            - generic [ref=e376]: Compatibility
+            - generic [ref=e379]:
+              - button "Start" [ref=e380] [cursor=pointer]:
+                - img [ref=e381]
+                - text: Start
+              - button "Save" [ref=e383] [cursor=pointer]:
+                - img [ref=e384]
+                - text: Save
+          - article [ref=e386]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: SWAP
+              - generic [ref=e389]: 97% fit
+            - generic [ref=e390]:
+              - heading "AI pitch rehearsal" [level=3] [ref=e391]
+              - paragraph [ref=e392]: Balanced barter value with Swapnil Navanath Jadhav from Your campus.
+            - generic [ref=e394]: Compatibility
+            - generic [ref=e397]:
+              - button "Start" [ref=e398] [cursor=pointer]:
+                - img [ref=e399]
+                - text: Start
+              - button "Save" [ref=e401] [cursor=pointer]:
+                - img [ref=e402]
+                - text: Save
+          - article [ref=e404]:
+            - generic [ref=e405]:
+              - generic [ref=e406]: RENT
+              - generic [ref=e407]: 96% fit
+            - generic [ref=e408]:
+              - heading "Video editing for reels" [level=3] [ref=e409]
+              - paragraph [ref=e410]: Strong delivery history with Meera Kulkarni from Symbiosis Pune.
+            - generic [ref=e412]: Compatibility
+            - generic [ref=e415]:
+              - button "Start" [ref=e416] [cursor=pointer]:
+                - img [ref=e417]
+                - text: Start
+              - button "Save" [ref=e419] [cursor=pointer]:
+                - img [ref=e420]
+                - text: Save
+          - article [ref=e422]:
+            - generic [ref=e423]:
+              - generic [ref=e424]: RENT
+              - generic [ref=e425]: 92% fit
+            - generic [ref=e426]:
+              - heading "Logo and pitch deck polish" [level=3] [ref=e427]
+              - paragraph [ref=e428]: Strong delivery history with Nisha Rao from COEP Tech.
+            - generic [ref=e430]: Compatibility
+            - generic [ref=e433]:
+              - button "Start" [ref=e434] [cursor=pointer]:
+                - img [ref=e435]
+                - text: Start
+              - button "Save" [ref=e437] [cursor=pointer]:
+                - img [ref=e438]
+                - text: Save
+    - region "Student Dashboard" [ref=e440]:
+      - generic [ref=e441]:
+        - generic [ref=e442]:
+          - paragraph [ref=e443]: Founder grade MVP
+          - heading "Student Dashboard" [level=2] [ref=e444]
+        - button "Reset Demo" [ref=e445] [cursor=pointer]:
+          - img [ref=e446]
+          - text: Reset Demo
+      - generic [ref=e449]:
+        - complementary [ref=e450]:
+          - generic [ref=e451]: SJ
+          - heading "Swapnil Navanath Jadhav" [level=3] [ref=e452]
+          - paragraph [ref=e453]: Army Institute of Technology, Pune
+          - generic [ref=e454]: Campus verified profile
+          - generic [ref=e455]:
+            - button "Verify ID" [ref=e456] [cursor=pointer]:
+              - img [ref=e457]
+              - text: Verify ID
+            - button "Upgrade Pro" [ref=e460] [cursor=pointer]:
+              - img [ref=e461]
+              - text: Upgrade Pro
+        - generic [ref=e463]:
+          - tablist "Dashboard views" [ref=e464]:
+            - tab "Deals" [selected] [ref=e465] [cursor=pointer]
+            - tab "Wallet" [ref=e466] [cursor=pointer]
+            - tab "Portfolio" [ref=e467] [cursor=pointer]
+            - tab "Analytics" [ref=e468] [cursor=pointer]
+          - tabpanel [ref=e469]:
+            - generic [ref=e470]:
+              - article [ref=e471]:
+                - generic [ref=e472]:
+                  - generic [ref=e473]:
+                    - generic [ref=e474]: SWAP
+                    - heading "React landing page audit" [level=3] [ref=e475]
+                  - generic [ref=e476]: In progress
+                - paragraph [ref=e477]: Aarav Mehta - Due Today 7:00 PM - 160 SwapCoins
+                - generic "Progress 64%" [ref=e478]
+                - generic [ref=e480]:
+                  - button "Advance" [ref=e481] [cursor=pointer]:
+                    - img [ref=e482]
+                    - text: Advance
+                  - button "Complete" [ref=e484] [cursor=pointer]:
+                    - img [ref=e485]
+                    - text: Complete
+                  - button "Review" [ref=e488] [cursor=pointer]:
+                    - img [ref=e489]
+                    - text: Review
+                  - button "Dispute" [ref=e491] [cursor=pointer]:
+                    - img [ref=e492]
+                    - text: Dispute
+              - article [ref=e496]:
+                - generic [ref=e497]:
+                  - generic [ref=e498]:
+                    - generic [ref=e499]: RENT
+                    - heading "Launch reel edit" [level=3] [ref=e500]
+                  - generic [ref=e501]: Escrow held
+                - paragraph [ref=e502]: Meera Kulkarni - Due Tomorrow 6:00 PM - Rs 350 in escrow
+                - generic "Progress 35%" [ref=e503]
+                - generic [ref=e505]:
+                  - button "Advance" [ref=e506] [cursor=pointer]:
+                    - img [ref=e507]
+                    - text: Advance
+                  - button "Complete" [ref=e509] [cursor=pointer]:
+                    - img [ref=e510]
+                    - text: Complete
+                  - button "Review" [ref=e513] [cursor=pointer]:
+                    - img [ref=e514]
+                    - text: Review
+                  - button "Dispute" [ref=e516] [cursor=pointer]:
+                    - img [ref=e517]
+                    - text: Dispute
+    - region "Verification, Escrow, Reviews" [ref=e521]:
+      - generic [ref=e522]:
+        - generic [ref=e523]:
+          - paragraph [ref=e524]: Trust architecture
+          - heading "Verification, Escrow, Reviews" [level=2] [ref=e525]
+        - button "Open Dispute" [ref=e526] [cursor=pointer]:
+          - img [ref=e527]
+          - text: Open Dispute
+      - generic [ref=e531]:
+        - article [ref=e532]:
+          - img [ref=e533]
+          - heading "Campus identity" [level=3] [ref=e542]
+          - paragraph [ref=e543]: College email and student ID checks create accountability before transactions begin.
+          - button "Verify Now" [ref=e544] [cursor=pointer]
+        - article [ref=e545]:
+          - img [ref=e546]
+          - heading "Escrow holding" [level=3] [ref=e550]
+          - paragraph [ref=e551]: Paid projects are held in escrow until both students confirm delivery.
+          - button "Simulate Escrow" [ref=e552] [cursor=pointer]
+        - article [ref=e553]:
+          - img [ref=e554]
+          - heading "Dual reviews" [level=3] [ref=e556]
+          - paragraph [ref=e557]: Both peers rate the swap, improving trust score, badges, and portfolio credibility.
+          - button "Add Review" [ref=e558] [cursor=pointer]
+      - generic [ref=e559]:
+        - generic [ref=e560]:
+          - heading "Recent reviews" [level=3] [ref=e561]
+          - generic [ref=e562]:
+            - article [ref=e563]:
+              - generic [ref=e564]:
+                - strong [ref=e565]: Nisha Rao
+                - generic [ref=e566]: 5/5
+              - paragraph [ref=e567]: Clear scope, fast delivery, and a strong design eye.
+              - generic [ref=e568]: Today
+            - article [ref=e569]:
+              - generic [ref=e570]:
+                - strong [ref=e571]: Rohan Iyer
+                - generic [ref=e572]: 4/5
+              - paragraph [ref=e573]: Good DSA explanations and useful practice questions.
+              - generic [ref=e574]: Yesterday
+        - generic [ref=e575]:
+          - heading "Dispute desk" [level=3] [ref=e576]
+          - article [ref=e578]:
+            - generic [ref=e579]:
+              - strong [ref=e580]: Excel dashboard build
+              - generic [ref=e581]: Mediation scheduled
+            - paragraph [ref=e582]: Scope mismatch - Both peers agreed to revise deliverables.
+    - region "Reputation, Recruiters, Ambassadors" [ref=e583]:
+      - generic [ref=e584]:
+        - generic [ref=e585]:
+          - paragraph [ref=e586]: Community growth
+          - heading "Reputation, Recruiters, Ambassadors" [level=2] [ref=e587]
+        - button "Copy Invite" [ref=e588] [cursor=pointer]:
+          - img [ref=e589]
+          - text: Copy Invite
+      - generic [ref=e592]:
+        - article [ref=e593]:
+          - generic [ref=e594]:
+            - heading "Campus leaderboard" [level=3] [ref=e595]
+            - generic [ref=e596]: 12 day streak
+          - generic [ref=e597]:
+            - generic [ref=e598]:
+              - generic [ref=e599]:
+                - strong [ref=e600]: "#1 Swapnil"
+                - text: Campus contributor
+              - strong [ref=e601]: 1,420 pts
+            - generic [ref=e602]:
+              - generic [ref=e603]:
+                - strong [ref=e604]: "#2 Nisha"
+                - text: Campus contributor
+              - strong [ref=e605]: 1,280 pts
+            - generic [ref=e606]:
+              - generic [ref=e607]:
+                - strong [ref=e608]: "#3 Aarav"
+                - text: Campus contributor
+              - strong [ref=e609]: 1,105 pts
+            - generic [ref=e610]:
+              - generic [ref=e611]:
+                - strong [ref=e612]: "#4 Meera"
+                - text: Campus contributor
+              - strong [ref=e613]: 980 pts
+        - article [ref=e614]:
+          - generic [ref=e615]:
+            - heading "Badges" [level=3] [ref=e616]
+            - generic [ref=e617]: 5 earned
+          - generic [ref=e618]:
+            - generic [ref=e620]: Verified Builder
+            - generic [ref=e622]: Fast Responder
+            - generic [ref=e624]: Swap Streak
+            - generic [ref=e626]: Top Tutor
+            - generic [ref=e628]: Launch Lead
+        - article [ref=e629]:
+          - generic [ref=e630]:
+            - heading "Recruiter preview" [level=3] [ref=e631]
+            - generic [ref=e632]: Verified talent pool
+          - generic [ref=e633]:
+            - generic [ref=e634]:
+              - strong [ref=e635]: Frontend
+              - generic [ref=e636]: 18 verified profiles
+            - generic [ref=e637]:
+              - strong [ref=e638]: Design
+              - generic [ref=e639]: 12 verified profiles
+            - generic [ref=e640]:
+              - strong [ref=e641]: Video
+              - generic [ref=e642]: 9 verified profiles
+        - article [ref=e643]:
+          - generic [ref=e644]:
+            - heading "Ambassador kit" [level=3] [ref=e645]
+            - generic [ref=e646]: 34 referrals
+          - generic [ref=e647]:
+            - button "Log Referral" [ref=e648] [cursor=pointer]:
+              - img [ref=e649]
+              - text: Log Referral
+            - button "Launch Whisper" [ref=e652] [cursor=pointer]:
+              - img [ref=e653]
+              - text: Launch Whisper
+          - generic [ref=e657]: Launch momentum
+  - contentinfo [ref=e660]:
+    - generic [ref=e661]:
+      - strong [ref=e662]: SwapSkill
+      - paragraph [ref=e663]: Frontend MVP for a campus skill economy. No backend required.
+    - generic [ref=e664]:
+      - link "Marketplace" [ref=e665] [cursor=pointer]:
+        - /url: "#marketplace"
+      - link "Dashboard" [ref=e666] [cursor=pointer]:
+        - /url: "#dashboard"
+      - link "Trust" [ref=e667] [cursor=pointer]:
+        - /url: "#trust"
+      - link "Growth" [ref=e668] [cursor=pointer]:
+        - /url: "#growth"
+  - complementary [ref=e669]:
+    - generic [ref=e670]:
+      - generic [ref=e671]:
+        - generic [ref=e672]: Peer chat
+        - strong [ref=e673]: Aarav Mehta
+      - button [ref=e674] [cursor=pointer]:
+        - img [ref=e675]
+    - generic [ref=e678]:
+      - generic [ref=e679]:
+        - generic [ref=e680]: Aarav Mehta - 10:20
+        - text: Hey, I can review your hackathon dashboard tonight.
+      - generic [ref=e681]:
+        - generic [ref=e682]: You - 10:22
+        - text: Perfect. I will send the Figma and repo link.
+    - generic [ref=e683]:
+      - textbox [ref=e684]:
+        - /placeholder: Type a message...
+      - button [ref=e685] [cursor=pointer]:
+        - img [ref=e686]
+        - text: Send

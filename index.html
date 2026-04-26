@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwapSkill - Campus Skill Economy</title>
+    <meta
+      name="description"
+      content="SwapSkill is a frontend-only campus skill exchange platform for swapping, renting, and learning skills."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Crect x='10' y='10' width='44' height='44' fill='none' stroke='%2376b900' stroke-width='4'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-size='28' font-weight='700' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#app">
+        <span class="brand-mark">S</span>
+        <span>
+          <strong>SwapSkill</strong>
+          <small>Trade Skills. Build Futures.</small>
+        </span>
+      </a>
+
+      <button class="icon-button mobile-only" type="button" data-action="toggle-menu" aria-label="Open navigation">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <a href="#marketplace">Marketplace</a>
+        <a href="#matches">Match Engine</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#trust">Trust</a>
+        <a href="#growth">Growth</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="button button-dark" type="button" data-action="open-verification">
+          <i data-lucide="badge-check"></i>
+          Verify
+        </button>
+        <button class="button" type="button" data-action="open-post-modal">
+          <i data-lucide="plus"></i>
+          List Skill
+        </button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="command-center" aria-labelledby="commandTitle">
+        <div class="command-copy">
+          <p class="section-label">Campus verified marketplace</p>
+          <h1 id="commandTitle">SwapSkill</h1>
+          <p class="lead">
+            A mobile-first peer network where students swap, rent, teach, and learn skills using trusted campus identity,
+            SwapCoins, escrow, reviews, and reputation.
+          </p>
+
+          <div class="quick-actions" role="group" aria-label="Mode shortcuts">
+            <button class="mode-tile active" type="button" data-action="set-mode" data-mode="ALL">
+              <strong>All</strong>
+              <span>Campus market</span>
+            </button>
+            <button class="mode-tile" type="button" data-action="set-mode" data-mode="SWAP">
+              <strong>Swap</strong>
+              <span>Skill for skill</span>
+            </button>
+            <button class="mode-tile" type="button" data-action="set-mode" data-mode="RENT">
+              <strong>Rent</strong>
+              <span>Paid projects</span>
+            </button>
+            <button class="mode-tile" type="button" data-action="set-mode" data-mode="LEARN">
+              <strong>Learn</strong>
+              <span>Peer teaching</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="market-console" aria-label="Live campus market console">
+          <div class="console-topline">
+            <span>AIT Pune live</span>
+            <span id="verificationStatus">Unverified</span>
+          </div>
+          <div class="console-grid">
+            <article class="metric">
+              <span class="metric-value" id="heroUserCount">10,284</span>
+              <span class="metric-label">Registered users</span>
+            </article>
+            <article class="metric">
+              <span class="metric-value" id="heroTransactionCount">1,536</span>
+              <span class="metric-label">Monthly swaps</span>
+            </article>
+            <article class="metric">
+              <span class="metric-value" id="heroCoinCount">760</span>
+              <span class="metric-label">SwapCoins</span>
+            </article>
+            <article class="metric">
+              <span class="metric-value" id="heroTrustScore">94</span>
+              <span class="metric-label">Trust score</span>
+            </article>
+          </div>
+          <div class="ticker" id="liveTicker" aria-label="Live marketplace activity"></div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="marketplace" aria-labelledby="marketplaceTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Skill exchange</p>
+            <h2 id="marketplaceTitle">Marketplace</h2>
+          </div>
+          <button class="button" type="button" data-action="open-post-modal">
+            <i data-lucide="square-pen"></i>
+            New Listing
+          </button>
+        </div>
+
+        <div class="toolbar">
+          <label class="field field-search">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Coding, design, video, Excel..." autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select id="categorySelect">
+              <option>All</option>
+              <option>Coding</option>
+              <option>Design</option>
+              <option>Video</option>
+              <option>Academics</option>
+              <option>Music</option>
+              <option>Language</option>
+              <option>Business</option>
+            </select>
+          </label>
+          <div class="segmented" role="group" aria-label="Marketplace mode filter">
+            <button type="button" class="segment active" data-action="set-mode" data-mode="ALL">All</button>
+            <button type="button" class="segment" data-action="set-mode" data-mode="SWAP">Swap</button>
+            <button type="button" class="segment" data-action="set-mode" data-mode="RENT">Rent</button>
+            <button type="button" class="segment" data-action="set-mode" data-mode="LEARN">Learn</button>
+          </div>
+        </div>
+
+        <div class="content-grid" id="listingGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="section section-dark" id="matches" aria-labelledby="matchesTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">SwapCoin valuation</p>
+            <h2 id="matchesTitle">Match Engine</h2>
+          </div>
+          <button class="button button-dark" type="button" data-action="generate-matches">
+            <i data-lucide="sparkles"></i>
+            Refresh Matches
+          </button>
+        </div>
+
+        <div class="match-layout">
+          <form class="valuation-panel" id="valuationForm">
+            <h3>Barter calculator</h3>
+            <label class="field field-dark">
+              <span>Your skill</span>
+              <select id="mySkillSelect">
+                <option>React frontend build</option>
+                <option>Video editing sprint</option>
+                <option>DSA tutoring</option>
+                <option>Presentation design</option>
+              </select>
+            </label>
+            <label class="field field-dark">
+              <span>Skill needed</span>
+              <select id="neededSkillSelect">
+                <option>UI/UX audit</option>
+                <option>Python debugging</option>
+                <option>Guitar basics</option>
+                <option>Excel dashboard</option>
+              </select>
+            </label>
+            <label class="field field-dark">
+              <span>Estimated hours</span>
+              <input id="hoursInput" type="number" min="1" max="40" value="4" />
+            </label>
+            <button class="button button-dark" type="submit">
+              <i data-lucide="calculator"></i>
+              Calculate
+            </button>
+            <div class="valuation-result" id="valuationResult">
+              <strong>160 SwapCoins</strong>
+              <span>Fair value for a 4 hour exchange.</span>
+            </div>
+          </form>
+
+          <div class="match-results" id="matchResults"></div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="dashboard" aria-labelledby="dashboardTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Founder grade MVP</p>
+            <h2 id="dashboardTitle">Student Dashboard</h2>
+          </div>
+          <button class="button" type="button" data-action="reset-demo">
+            <i data-lucide="rotate-ccw"></i>
+            Reset Demo
+          </button>
+        </div>
+
+        <div class="dashboard-grid">
+          <aside class="profile-panel">
+            <div class="avatar">SJ</div>
+            <h3 id="profileName">Swapnil Jadhav</h3>
+            <p id="profileCollege">AIT Pune - Computer Engineering</p>
+            <div class="profile-status" id="profileStatus">Campus verification pending</div>
+            <div class="profile-actions">
+              <button class="button" type="button" data-action="open-verification">
+                <i data-lucide="shield-check"></i>
+                Verify ID
+              </button>
+              <button class="button button-secondary" type="button" data-action="upgrade-pro">
+                <i data-lucide="zap"></i>
+                Upgrade Pro
+              </button>
+            </div>
+          </aside>
+
+          <div class="dashboard-main">
+            <div class="dashboard-tabs" role="tablist" aria-label="Dashboard views">
+              <button class="tab active" type="button" role="tab" data-action="switch-tab" data-tab="deals">Deals</button>
+              <button class="tab" type="button" role="tab" data-action="switch-tab" data-tab="wallet">Wallet</button>
+              <button class="tab" type="button" role="tab" data-action="switch-tab" data-tab="portfolio">Portfolio</button>
+              <button class="tab" type="button" role="tab" data-action="switch-tab" data-tab="analytics">Analytics</button>
+            </div>
+
+            <div class="tab-panel active" id="tab-deals" role="tabpanel">
+              <div class="list-stack" id="dealList"></div>
+            </div>
+            <div class="tab-panel" id="tab-wallet" role="tabpanel">
+              <div class="wallet-layout">
+                <div class="wallet-card">
+                  <span>Available balance</span>
+                  <strong id="walletBalance">760</strong>
+                  <small>SwapCoins</small>
+                  <button class="button" type="button" data-action="earn-coins">
+                    <i data-lucide="coins"></i>
+                    Claim Campus Bonus
+                  </button>
+                </div>
+                <div class="ledger" id="walletLedger"></div>
+              </div>
+            </div>
+            <div class="tab-panel" id="tab-portfolio" role="tabpanel">
+              <div class="content-grid compact" id="portfolioGrid"></div>
+            </div>
+            <div class="tab-panel" id="tab-analytics" role="tabpanel">
+              <div class="analytics-grid" id="analyticsGrid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="trust" aria-labelledby="trustTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Trust architecture</p>
+            <h2 id="trustTitle">Verification, Escrow, Reviews</h2>
+          </div>
+          <button class="button button-dark" type="button" data-action="open-dispute">
+            <i data-lucide="scale"></i>
+            Open Dispute
+          </button>
+        </div>
+
+        <div class="trust-grid">
+          <article class="dark-card">
+            <i data-lucide="fingerprint"></i>
+            <h3>Campus identity</h3>
+            <p>College email and student ID checks create accountability before transactions begin.</p>
+            <button class="button button-dark" type="button" data-action="open-verification">Verify Now</button>
+          </article>
+          <article class="dark-card">
+            <i data-lucide="lock-keyhole"></i>
+            <h3>Escrow holding</h3>
+            <p>Paid projects are held in escrow until both students confirm delivery.</p>
+            <button class="button button-dark" type="button" data-action="simulate-escrow">Simulate Escrow</button>
+          </article>
+          <article class="dark-card">
+            <i data-lucide="star"></i>
+            <h3>Dual reviews</h3>
+            <p>Both peers rate the swap, improving trust score, badges, and portfolio credibility.</p>
+            <button class="button button-dark" type="button" data-action="open-review">Add Review</button>
+          </article>
+        </div>
+
+        <div class="review-dispute-grid">
+          <div>
+            <h3>Recent reviews</h3>
+            <div class="list-stack" id="reviewList"></div>
+          </div>
+          <div>
+            <h3>Dispute desk</h3>
+            <div class="list-stack" id="disputeList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="growth" aria-labelledby="growthTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Community growth</p>
+            <h2 id="growthTitle">Reputation, Recruiters, Ambassadors</h2>
+          </div>
+          <button class="button" type="button" data-action="copy-invite">
+            <i data-lucide="send"></i>
+            Copy Invite
+          </button>
+        </div>
+
+        <div class="growth-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Campus leaderboard</h3>
+              <span id="streakCount">12 day streak</span>
+            </div>
+            <div id="leaderboardList" class="leaderboard"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Badges</h3>
+              <span id="badgeCount">5 earned</span>
+            </div>
+            <div id="badgeList" class="badge-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Recruiter preview</h3>
+              <span>Verified talent pool</span>
+            </div>
+            <div id="recruiterList" class="recruiter-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Ambassador kit</h3>
+              <span id="referralCount">34 referrals</span>
+            </div>
+            <div class="ambassador-actions">
+              <button class="button" type="button" data-action="add-referral">
+                <i data-lucide="user-plus"></i>
+                Log Referral
+              </button>
+              <button class="button button-secondary" type="button" data-action="launch-campaign">
+                <i data-lucide="megaphone"></i>
+                Launch Whisper
+              </button>
+            </div>
+            <div class="campaign-meter">
+              <span>Launch momentum</span>
+              <div><span id="campaignMeter"></span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>SwapSkill</strong>
+        <p>Frontend MVP for a campus skill economy. No backend required.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#marketplace">Marketplace</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#trust">Trust</a>
+        <a href="#growth">Growth</a>
+      </div>
+    </footer>
+
+    <div class="modal" id="postModal" aria-hidden="true">
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <form class="modal-card" id="postForm" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
+        <div class="modal-header">
+          <h2 id="postModalTitle">List a Skill</h2>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Close listing modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="form-grid">
+          <label class="field">
+            <span>Mode</span>
+            <select name="mode" required>
+              <option>SWAP</option>
+              <option>RENT</option>
+              <option>LEARN</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select name="category" required>
+              <option>Coding</option>
+              <option>Design</option>
+              <option>Video</option>
+              <option>Academics</option>
+              <option>Music</option>
+              <option>Language</option>
+              <option>Business</option>
+            </select>
+          </label>
+          <label class="field span-2">
+            <span>Skill title</span>
+            <input name="title" placeholder="React portfolio site, Figma audit, DSA help..." required />
+          </label>
+          <label class="field span-2">
+            <span>Description</span>
+            <textarea name="description" rows="4" placeholder="What you can offer or want to learn..." required></textarea>
+          </label>
+          <label class="field">
+            <span>Price or coins</span>
+            <input name="value" type="number" min="0" value="120" required />
+          </label>
+          <label class="field">
+            <span>Availability</span>
+            <input name="availability" placeholder="Weekends, evenings..." required />
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="button button-secondary" type="button" data-action="close-modal">Cancel</button>
+          <button class="button" type="submit">
+            <i data-lucide="upload"></i>
+            Publish Listing
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal" id="verificationModal" aria-hidden="true">
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <form class="modal-card" id="verificationForm" role="dialog" aria-modal="true" aria-labelledby="verificationTitle">
+        <div class="modal-header">
+          <h2 id="verificationTitle">Campus Verification</h2>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Close verification modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="form-grid">
+          <label class="field">
+            <span>Full name</span>
+            <input name="name" value="Swapnil Navanath Jadhav" required />
+          </label>
+          <label class="field">
+            <span>College</span>
+            <input name="college" value="Army Institute of Technology, Pune" required />
+          </label>
+          <label class="field">
+            <span>College email</span>
+            <input name="email" type="email" value="swapnil@aitpune.edu.in" required />
+          </label>
+          <label class="field">
+            <span>Student ID</span>
+            <input name="studentId" value="AIT-3150" required />
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="button button-secondary" type="button" data-action="close-modal">Cancel</button>
+          <button class="button" type="submit">
+            <i data-lucide="badge-check"></i>
+            Verify Profile
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal" id="reviewModal" aria-hidden="true">
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <form class="modal-card" id="reviewForm" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+        <div class="modal-header">
+          <h2 id="reviewTitle">Add Review</h2>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Close review modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="form-grid">
+          <label class="field">
+            <span>Peer</span>
+            <input name="peer" value="Aarav Mehta" required />
+          </label>
+          <label class="field">
+            <span>Rating</span>
+            <select name="rating" required>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Strong</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Needs work</option>
+              <option value="1">1 - Poor</option>
+            </select>
+          </label>
+          <label class="field span-2">
+            <span>Review</span>
+            <textarea name="text" rows="4" required>Delivered clean work and communicated clearly.</textarea>
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="button button-secondary" type="button" data-action="close-modal">Cancel</button>
+          <button class="button" type="submit">
+            <i data-lucide="star"></i>
+            Save Review
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal" id="disputeModal" aria-hidden="true">
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <form class="modal-card" id="disputeForm" role="dialog" aria-modal="true" aria-labelledby="disputeTitle">
+        <div class="modal-header">
+          <h2 id="disputeTitle">Open Dispute</h2>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Close dispute modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="form-grid">
+          <label class="field">
+            <span>Transaction</span>
+            <select name="dealId" id="disputeDealSelect"></select>
+          </label>
+          <label class="field">
+            <span>Issue</span>
+            <select name="issue">
+              <option>Delivery delay</option>
+              <option>Scope mismatch</option>
+              <option>Payment release</option>
+              <option>Quality concern</option>
+            </select>
+          </label>
+          <label class="field span-2">
+            <span>Notes</span>
+            <textarea name="notes" rows="4" placeholder="Add a short mediation note" required></textarea>
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="button button-secondary" type="button" data-action="close-modal">Cancel</button>
+          <button class="button" type="submit">
+            <i data-lucide="scale"></i>
+            Submit Dispute
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal" id="detailModal" aria-hidden="true">
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+        <div class="modal-header">
+          <h2 id="detailTitle">Listing Detail</h2>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Close listing detail">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div id="detailBody"></div>
+      </article>
+    </div>
+
+    <aside class="chat-drawer" id="chatDrawer" aria-hidden="true" aria-label="Peer chat">
+      <div class="drawer-header">
+        <div>
+          <span>Peer chat</span>
+          <strong id="chatPeer">Campus peer</strong>
+        </div>
+        <button class="icon-button" type="button" data-action="close-chat" aria-label="Close chat">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="chat-log" id="chatLog"></div>
+      <form class="chat-form" id="chatForm">
+        <input name="message" placeholder="Type a message..." autocomplete="off" required />
+        <button class="button" type="submit" aria-label="Send message">
+          <i data-lucide="send"></i>
+          Send
+        </button>
+      </form>
+    </aside>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
