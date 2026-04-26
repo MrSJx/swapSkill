@@ -236,6 +236,9 @@ function bindEvents() {
   document.getElementById("disputeForm").addEventListener("submit", handleDisputeSubmit);
   document.getElementById("chatForm").addEventListener("submit", handleChatSubmit);
   els.valuationForm.addEventListener("submit", handleValuationSubmit);
+  els.mainNav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
   els.searchInput.addEventListener("input", (event) => {
     state.filters.search = event.target.value;
     saveState();
@@ -256,6 +259,10 @@ function bindEvents() {
 }
 
 function handleAction(event) {
+  if (event.target.closest("#mainNav a")) {
+    closeMenu();
+  }
+
   const trigger = event.target.closest("[data-action]");
   if (!trigger) return;
 

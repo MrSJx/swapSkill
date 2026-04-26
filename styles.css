@@ -1129,11 +1129,15 @@ h3 {
   border-left: 1px solid var(--gray-border);
   box-shadow: var(--shadow);
   transform: translateX(105%);
+  visibility: hidden;
+  pointer-events: none;
   transition: transform 180ms ease;
 }
 
 .chat-drawer.is-open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .drawer-header,
@@ -1209,6 +1213,7 @@ h3 {
   display: grid;
   gap: 10px;
   width: min(380px, calc(100vw - 40px));
+  pointer-events: none;
 }
 
 .toast {
